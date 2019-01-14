@@ -1,0 +1,7 @@
+{
+    "dept": [
+        { "id": 1, "name": "hr", "noOfStaff": "10" },
+        { "id": 2, "name": "developer", "noOfStaff": "10" },
+        { "id": 3, "name": "testing", "noOfStaff": "10" }
+      ]
+}

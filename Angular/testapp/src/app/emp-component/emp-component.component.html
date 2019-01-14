@@ -1,0 +1,35 @@
+<!-- <div>
+  hey {{nameOfEmp}}!<br/><br/>
+  <input [(ngModel)]="nameOfEmp" /> <br /><br/>
+  <input [placeholder] = "nameOfEmp"/>
+  <button (click)="changeNameOfEmp()">change name</button><br/>
+</div>
+
+<div>
+  Pipes Example : {{date | date:'fullDate'}}
+</div>
+
+<div *ngIf="printPayables;then trueB else falseB"></div>
+
+
+<ng-template #trueB>
+  <ul>
+    <li *ngFor="let pay of payables">{{pay}}</li>
+  </ul>
+</ng-template>
+
+<ng-template #falseB>
+</ng-template>
+
+
+<div *appMyIf="true">
+  <p>hello</p>
+</div> -->
+
+
+<div>
+  <p>List Of Employees:</p>
+  <input placeholder="No of Required Entries" [(ngModel)]="noOfRows"/> <br/>
+  <app-emp-list-component [noOfRecords] = 'noOfRows' ></app-emp-list-component>
+</div>
+

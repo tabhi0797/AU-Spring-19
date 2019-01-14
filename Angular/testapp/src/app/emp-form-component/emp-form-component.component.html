@@ -1,0 +1,44 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Employee Form</h1>
+    <form (ngSubmit)="onSubmit()" #empForm="ngForm">
+
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="number" class="form-control" id="id" required [(ngModel)]="model.id" name="id" #id="ngModel">
+        <div [hidden]="id.valid || id.pristine" class="alert alert-danger">
+          ID is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Dob</label>
+        <input type="date" class="form-control" id="dob" [(ngModel)]="model.dob" name="dob" #dob = "ngModel">
+        <div [hidden]="dob.valid || dob.pristine" class="alert alert-danger">
+          DOB is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" required [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+          <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+        </select>
+        <div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+          Gender is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!empForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="empForm.reset()">Reset</button>
+    </form>
+  </div>
+</div>

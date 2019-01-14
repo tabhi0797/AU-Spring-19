@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let data of users.result,let i=index">
+    <ng-container *ngIf='i<noOfRecords'>
+      
+      <a  routerLink = '/employee/{{data.id}}' routerLinkStatus = "active"> {{data.name}}  </a>
+    </ng-container>
+  </div>
+</div>
+
