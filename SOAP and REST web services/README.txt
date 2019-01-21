@@ -7,6 +7,12 @@ urls:
 	POST 	localhost:8080/meals
 	POST 	localhost:8080/meals/{id}
 	DELETE 	localhost:8080/meals/{id}
+
+- DB schema:
+	meal:
+	id - integer primary key
+	mname - varchar(50)
+	price - integer
 	
 MealsSOAPWebService:
 

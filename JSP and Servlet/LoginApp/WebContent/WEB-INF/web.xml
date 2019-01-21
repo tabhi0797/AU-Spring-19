@@ -42,7 +42,7 @@
 
 	<filter-mapping>
 		<filter-name>LoginFilter</filter-name> <!-- mandatory -->
-		<servlet-name>com.accolite.app.HomeServlet</servlet-name>
+		<servlet-name>com.accolite.app.controller.HomeServlet</servlet-name>
 	</filter-mapping>
 	
 	<filter-mapping>
