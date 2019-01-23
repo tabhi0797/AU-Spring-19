@@ -26,8 +26,14 @@ public class App
     	Person p = new Person();
     	p.setName("abhinav");
     	p.setAddress(address);
-    	session.save(p);
     	
+    	/*
+    	 * p is in transient state
+    	 */
+    	session.save(p);
+    	/*
+    	 * p is in persistent state
+    	 */
     	Person person = session.get(Person.class,1);
     	System.out.println(person);
     	

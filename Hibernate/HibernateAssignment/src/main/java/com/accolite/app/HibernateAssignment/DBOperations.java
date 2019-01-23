@@ -2,10 +2,14 @@ package com.accolite.app.HibernateAssignment;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.CriteriaQuery;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
@@ -45,9 +49,10 @@ public class DBOperations {
 		/*
 		 * HQL and Query, Pagination, namedQueries , parameter binding
 		 */
-		Query query1 = session.createQuery("FROM Vehicle where id >= 2");
+		TypedQuery<Vehicle> query1 = session.createQuery("FROM Vehicle where id >= :id");
+		query1.setParameter("id", 2);
 		query1.setMaxResults(2);
-		List<Vehicle> vehicles = query1.list();
+		List<Vehicle> vehicles = query1.getResultList();
 		System.out.println("list of vehicles:");
 		for(Vehicle vehicle:vehicles)
 		{
@@ -55,12 +60,12 @@ public class DBOperations {
 		}
 		
 		
-		Query query2 = session.createNamedQuery("getAllRegNos");
-		//query2.setParameter(0, 1);
+		TypedQuery<String> query2 = session.createNamedQuery("getAllRegNos");
+		List<String> regNos = query2.getResultList();
 		System.out.println("named query : list of vehicles id>1 :");
-		for(Vehicle vehicle:vehicles)
+		for(String regNo:regNos)
 		{
-			System.out.println(vehicle);
+			System.out.println(regNo);
 		}
 		
 		
