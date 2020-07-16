@@ -20,7 +20,7 @@
     "express-acl": "^2.0.4",
     "express-react-views": "^0.10.5",
     "express-session": "^1.15.6",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mongoose": "^5.3.2",
     "morgan": "~1.9.0",
     "passport": "^0.4.0",
